@@ -3,13 +3,18 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 /[Ll]ibrary/
+/[Ll]ibrary/
 /[Tt]emp/
+*/[Tt]emp/
 /[Oo]bj/
+*/[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-
+NattyGameDev FiPS\Library\Artifacts\08\08cc7caa546fbb185b0166a5bf69cd87
+C:\Users\CalvinDrijfhout\Github\NattyGameDev_FPS\NattyGameDev FiPS\Library\Artifacts\08\08cc7caa546fbb185b0166a5bf69cd87
+NattyGameDev FiPS/Library/Artifacts/08/08cc7caa546fbb185b0166a5bf69cd87
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/

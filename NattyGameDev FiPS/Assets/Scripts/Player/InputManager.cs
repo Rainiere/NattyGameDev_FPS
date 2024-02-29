@@ -19,6 +19,13 @@ public class InputManager : MonoBehaviour
         _PlayerLook = GetComponent<PlayerLook>();
 
         _OnFootActions.Jump.performed += ctx => _PlayerMotor.Jump();
+        _OnFootActions.Crouch.performed += ctx => _PlayerMotor.Crouch();
+        _OnFootActions.Sprint.performed += ctx => _PlayerMotor.Sprint();
+    }
+
+    private void Sprint_performed(InputAction.CallbackContext obj)
+    {
+        throw new System.NotImplementedException();
     }
 
     // Update is called once per frame
