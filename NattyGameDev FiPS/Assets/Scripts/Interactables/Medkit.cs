@@ -5,7 +5,7 @@ using UnityEngine;
 public class Medkit : Interactables
 {
 
-    [SerializeField] private float HealingAmount;
+    [SerializeField] private int HealingAmount;
 
     [SerializeField] private GameObject _Player;
                      private PlayerHealth _PlayerScript;

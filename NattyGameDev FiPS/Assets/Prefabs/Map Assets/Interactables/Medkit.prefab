@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f980d978f85889940b8b1c9c9b13b4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PromptMessage: 
-  HealingAmount: 0
-  _Player: {fileID: 0}
-  MedkitObject: {fileID: 0}
+  PromptMessage: Use Medkit
+  HealingAmount: 50
+  _Player: {fileID: 3737375528210286217, guid: 81091150e37fd6541a66766e83f0a9e5, type: 3}
+  MedkitObject: {fileID: 7401323172301428731}
