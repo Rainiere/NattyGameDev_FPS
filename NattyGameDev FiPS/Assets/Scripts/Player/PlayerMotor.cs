@@ -54,10 +54,11 @@ public class PlayerMotor : MonoBehaviour
             PlayerVelocity.y = Mathf.Sqrt(JumpHeight * -3.0f * Gravity);
         }
     }
-    public void SetJumpHeight(float modifier)
+    public void SetJumpHeight(float modifier, bool BuffOn)
     {
 
         JumpHeight += modifier;
+        if (BuffOn == false) { if (IsSprinting) { JumpHeight = DefaultJumpHeight * 1.5f; } else { JumpHeight = DefaultJumpHeight; } }
     }
 
     public void Crouch()

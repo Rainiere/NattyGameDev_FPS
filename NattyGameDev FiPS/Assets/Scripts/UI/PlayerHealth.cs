@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
             PercentComplete = PercentComplete * PercentComplete;
             FrontHealthbar.fillAmount = Mathf.Lerp(FillFront, BackHealthbar.fillAmount, PercentComplete);
             CurrentHealthText.text = Health.ToString();
-            BloodsplatterColor.a = 1f - HealthFraction;     
+            BloodsplatterColor.a = 1f - HealthFraction;
             DamageEffectBloodsplatter.color = Color.Lerp(DamageEffectBloodsplatter.color, BloodsplatterColor, 1f * Time.deltaTime);
         }
     }

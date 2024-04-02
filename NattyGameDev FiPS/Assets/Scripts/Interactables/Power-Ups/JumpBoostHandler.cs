@@ -30,7 +30,7 @@ public class JumpBoostHandler : PowerUpHandler
             BuffRemainingDuration -= Time.deltaTime;
             if (BuffRemainingDuration <= 0)
             {
-                _PlayerMotor.SetJumpHeight(-JumpIncrease);
+                _PlayerMotor.SetJumpHeight(-JumpIncrease, false);
                 BuffActive = false;
             }
         }
@@ -44,7 +44,7 @@ public void HandlePowerUp(GameObject _Cube, float BuffDuration, float _JumpIncre
         CooldownRemainingDuration = CooldownDuration + BuffDuration;
         BuffRemainingDuration = BuffDuration;
         JumpIncrease = _JumpIncrease;
-        _PlayerMotor.SetJumpHeight(JumpIncrease);
+        _PlayerMotor.SetJumpHeight(JumpIncrease, true);
         Cube.SetActive(false);
     }
 }
