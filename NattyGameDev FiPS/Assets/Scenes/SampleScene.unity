@@ -2872,6 +2872,10 @@ MonoBehaviour:
   - {fileID: 339143226}
   - {fileID: 836782946}
   - {fileID: 388364871}
+  alwaysDrawPath: 1
+  drawAsLoop: 1
+  drawNumbers: 1
+  debugColour: {r: 0, g: 1, b: 0.5935607, a: 1}
 --- !u!4 &686900720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9221904708940594636, guid: bf8f8d272e8d6cb4ba21412e97cc6e29, type: 3}
@@ -3873,6 +3877,10 @@ MonoBehaviour:
   - {fileID: 668585556}
   - {fileID: 46910020}
   - {fileID: 376463026}
+  alwaysDrawPath: 1
+  drawAsLoop: 1
+  drawNumbers: 1
+  debugColour: {r: 0, g: 0.32549024, b: 1, a: 1}
 --- !u!1001 &936656662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10381,7 +10389,7 @@ PrefabInstance:
     - target: {fileID: 5819380207723131095, guid: 47bd716e2b031d64c8932308c72123ba, type: 3}
       propertyPath: path
       value: 
-      objectReference: {fileID: 920062445}
+      objectReference: {fileID: 683434077}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

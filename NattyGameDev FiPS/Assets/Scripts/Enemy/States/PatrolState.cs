@@ -5,9 +5,13 @@ using UnityEngine;
 public class PatrolState : BaseState
 {
     public int WaypointIndex;
+    public float WaitTimer = 3f;
+    private float OriginalWaitTimer;
+
+
     public override void Enter()
     {
-
+        OriginalWaitTimer = WaitTimer;
     }
 
     public override void Perform()
@@ -23,16 +27,23 @@ public class PatrolState : BaseState
     public void PatrolCycle()
     {
         //Implement patrol logic
-        if(enemy.Agent.remainingDistance < 0.2f)
+        if (enemy.Agent.remainingDistance < 0.2f)
         {
-            if(WaypointIndex < enemy.path.waypoints.Count - 1)
+            WaitTimer -= Time.deltaTime;
+            
+            if (WaitTimer <= 0)
             {
-                WaypointIndex++;
-            } else
-            {
-                WaypointIndex = 0;
+                if (WaypointIndex < enemy.path.waypoints.Count - 1)
+                {
+                    WaypointIndex++;
+                }
+                else
+                {
+                    WaypointIndex = 0;
+                }
+                enemy.Agent.SetDestination(enemy.path.waypoints[WaypointIndex].position);
+                WaitTimer = OriginalWaitTimer;
             }
-            enemy.Agent.SetDestination(enemy.path.waypoints[WaypointIndex].position);
         }
     }
 }

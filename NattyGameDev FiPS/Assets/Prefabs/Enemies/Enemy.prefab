@@ -71,6 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: 
   path: {fileID: 0}
+  SightDistance: 20
+  FieldOfView: 85
+  EyeHeight: 1.66
 --- !u!1 &1892122113293048859
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8629772245826101369}
   - component: {fileID: 2264197410454639358}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +285,7 @@ GameObject:
   - component: {fileID: 1893565126597950567}
   - component: {fileID: 9165510863419228731}
   - component: {fileID: 2245777209342140159}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +391,7 @@ GameObject:
   - component: {fileID: 8407325652146167772}
   - component: {fileID: 3089379168260231194}
   - component: {fileID: 3317860375594389260}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
