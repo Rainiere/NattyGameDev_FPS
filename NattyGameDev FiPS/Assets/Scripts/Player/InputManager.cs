@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerMotor _PlayerMotor;
     private PlayerLook _PlayerLook;
+    private Weapons _Weapons;
     void Awake()
     {
         _PlayerInput = new PlayerInput();
@@ -17,10 +18,13 @@ public class InputManager : MonoBehaviour
 
         _PlayerMotor = GetComponent<PlayerMotor>();
         _PlayerLook = GetComponent<PlayerLook>();
+        _Weapons = GetComponent<Weapons>();
 
         _OnFootActions.Jump.performed += ctx => _PlayerMotor.Jump();
         _OnFootActions.Crouch.performed += ctx => _PlayerMotor.Crouch();
         _OnFootActions.Sprint.performed += ctx => _PlayerMotor.Sprint();
+        //_OnFootActions.ShootWeapon.performed += ctx => _Weapons.Shoot(); Old function, semi-auto only
+        _OnFootActions.ShootWeapon.performed += ctx => _Weapons.SetShooting(); //Test for full-auto
     }
 
     private void Sprint_performed(InputAction.CallbackContext obj)

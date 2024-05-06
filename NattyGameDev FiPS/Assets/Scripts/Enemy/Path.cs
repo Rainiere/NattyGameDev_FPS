@@ -5,14 +5,13 @@ using UnityEditor;
 public class Path : MonoBehaviour
 {
 
-    public List<Transform> waypoints;
-    [SerializeField]
-    private bool alwaysDrawPath;
-    [SerializeField]
-    private bool drawAsLoop;
-    [SerializeField]
-    private bool drawNumbers;
     public Color debugColour = Color.white;
+    public List<Transform> waypoints;
+
+    [SerializeField] private bool alwaysDrawPath;
+    [SerializeField] private bool drawAsLoop;
+    [SerializeField] private bool drawNumbers;
+
 
 #if UNITY_EDITOR
     public void OnDrawGizmos()

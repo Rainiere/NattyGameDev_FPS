@@ -19,11 +19,6 @@ public class Mine : MonoBehaviour
         _PlayerHealth = Player.GetComponent<PlayerHealth>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider col)
     {
         if (col != null)

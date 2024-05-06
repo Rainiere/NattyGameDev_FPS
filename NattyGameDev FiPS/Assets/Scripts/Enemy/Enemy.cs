@@ -4,32 +4,50 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
-    private StateMachine stateMachine;
+    private StateMachine _StateMachine;
     private NavMeshAgent agent;
 
     public NavMeshAgent Agent { get => agent;  }
 
-    //For debugging
-    [SerializeField]
-    private string CurrentState;
     public Path path;
-    private GameObject Player;
+    public GameObject Player;
+    private Vector3 PlayerLastKnownPos;
+    public Vector3 _PlayerLastKnownPos { get => PlayerLastKnownPos; set => PlayerLastKnownPos = value; }
+
+    [Header("Sight values")]
     public float SightDistance = 20f;
     public float FieldOfView = 85f;
     public float EyeHeight;
+
+    public GameObject GunModel;
+
+    [Header("Stats")]
+    public int Health;
+
+    [Header("Weapon values")]
+    public Transform GunBarrel;
+    [Range(0.1f, 10f)]
+    public float FireRate;
+
+    //For debugging
+    [SerializeField]
+    private string CurrentState;
+
     // Start is called before the first frame update
     void Start()
     {
-        stateMachine = GetComponent<StateMachine>();
+        _StateMachine = GetComponent<StateMachine>();
         agent = GetComponent<NavMeshAgent>();
-        stateMachine.Initialize();
+        _StateMachine.Initialize();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        //this.transform.Rotate(0, this.transform.rotation.y, 0);
         CanSeePlayer();
+        CurrentState = _StateMachine.ActiveState.ToString();
     }
 
     public bool CanSeePlayer()
@@ -59,5 +77,13 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     
 }
