@@ -30,7 +30,6 @@ public class PlayerBullet : MonoBehaviour
         Transform HitTransform = collision.transform;
         if (HitTransform.CompareTag("Enemy"))   
         {
-            Debug.Log("Ping ping!");
             HitTransform.GetComponent<Enemy>().TakeDamage(Damage);
         }
         Destroy(gameObject);

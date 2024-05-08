@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private string CurrentState;
 
+    private bool isDead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +47,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this.transform.Rotate(0, this.transform.rotation.y, 0);
         CanSeePlayer();
         CurrentState = _StateMachine.ActiveState.ToString();
     }
@@ -82,8 +83,13 @@ public class Enemy : MonoBehaviour
         Health -= damage;
         if(Health <= 0)
         {
-            Destroy(gameObject);
+            if (isDead == false)
+            {
+                _StateMachine.ChangeState(new DeathState());
+                isDead = true;
+            }
         }
     }
-    
+
+
 }
