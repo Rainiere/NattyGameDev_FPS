@@ -5,17 +5,21 @@ using UnityEngine;
 public class DeathState : BaseState
 {
     private float DestroyTimer = 0;
-    private Quaternion CurrentRotation;// = enemy.transform.rotation;
-    private Quaternion EndRotation;
+    //private Quaternion CurrentRotation;// = enemy.transform.rotation;
+    //private Quaternion EndRotation;
+    //private float RotationTimer = 0;
+    
+    private Animator _Animator;
 
     public override void Enter()
     {
 
-        CurrentRotation = enemy.gameObject.transform.rotation;
-        EndRotation = new Quaternion(90, 90, 90, 90);
+        //CurrentRotation = enemy.gameObject.transform.rotation;
+        //EndRotation = new Quaternion(45, enemy.gameObject.transform.rotation.y, enemy.gameObject.transform.rotation.z, enemy.gameObject.transform.rotation.w);
         enemy.Agent.SetDestination(enemy.gameObject.transform.position);
-        Debug.Log(enemy.gameObject);
-        enemy.gameObject.transform.rotation = Quaternion.Lerp(CurrentRotation, EndRotation, 0.5f);
+        _Animator = enemy.gameObject.GetComponent<Animator>();
+        _Animator.enabled = true;
+        _Animator.SetBool("IsDead", true);
     }
 
     public override void Exit()
@@ -25,6 +29,7 @@ public class DeathState : BaseState
 
     public override void Perform()
     {
+
         DestroyTimer += Time.deltaTime;
         if (DestroyTimer >= 5)
         {

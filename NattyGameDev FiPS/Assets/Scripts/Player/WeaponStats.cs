@@ -12,4 +12,6 @@ public class WeaponStats : MonoBehaviour
     [SerializeField] public bool SingleFire;
     [SerializeField] public float FireRate;
     [SerializeField] public int BulletVelocity;
+    [SerializeField] public float RecoilModifier;
+    [SerializeField] public float RecoilMax;
 }

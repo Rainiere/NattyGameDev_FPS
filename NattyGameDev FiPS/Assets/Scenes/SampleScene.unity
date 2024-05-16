@@ -1151,6 +1151,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1338383798}
     m_Modifications:
+    - target: {fileID: -2421601653057243241, guid: 47bd716e2b031d64c8932308c72123ba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2115363829496799020, guid: 47bd716e2b031d64c8932308c72123ba, type: 3}
       propertyPath: m_AutoBraking
       value: 0
@@ -6404,6 +6408,8 @@ MonoBehaviour:
   SingleFire: 0
   FireRate: 0.3
   BulletVelocity: 160
+  RecoilModifier: 0.2
+  RecoilMax: 2
 --- !u!1001 &1548610069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10785,7 +10791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3467637162698982629, guid: 8fd44e70ca303e649b4dea575beda9f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.94
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 3467637162698982629, guid: 8fd44e70ca303e649b4dea575beda9f6, type: 3}
       propertyPath: m_LocalPosition.y
